@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Game Launcher</title>
+  <style>
+    body {
+      background-color: #0f0f0f;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: sans-serif;
+    }
+    button {
+      padding: 20px 40px;
+      font-size: 20px;
+      color: white;
+      background: linear-gradient(90deg, #00f, #0ff);
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 0 20px #0ff;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+    button:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <button onclick="launchGame()">Play Game</button>
+
+  <script>
+    function launchGame() {
+      const win = window.open('', '_blank');
+      fetch('https://example.com/game/index.html') // Replace with your game URL
+        .then(res => res.text())
+        .then(html => win.document.write(html));
+    }
+  </script>
+</body>
+</html>
