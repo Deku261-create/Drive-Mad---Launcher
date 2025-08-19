@@ -1,15 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Game Launcher</title>
+  <meta charset="UTF-8">
+  <title>Stealth Game Launcher</title>
   <style>
     body {
-      background-color: #0f0f0f;
+      background-color: #0d0d0d;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
-      font-family: sans-serif;
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
     }
     button {
       padding: 20px 40px;
@@ -17,13 +19,14 @@
       color: white;
       background: linear-gradient(90deg, #00f, #0ff);
       border: none;
-      border-radius: 10px;
+      border-radius: 12px;
       box-shadow: 0 0 20px #0ff;
       cursor: pointer;
-      transition: transform 0.2s ease;
+      transition: all 0.2s ease;
     }
     button:hover {
       transform: scale(1.05);
+      box-shadow: 0 0 30px #0ff;
     }
   </style>
 </head>
@@ -32,11 +35,11 @@
 
   <script>
     function launchGame() {
-      const win = window.open('', '_blank');
-      fetch('fetch('https://ubg98.github.io/drive-mad/')
-') // Replace with your game URL
+      const win = window.open('about:blank', '_blank');
+      fetch('https://ubg98.github.io/drive-mad/')
         .then(res => res.text())
-        .then(html => win.document.write(html));
+        .then(html => win.document.write(html))
+        .catch(err => alert('Game failed to load. Try again later.'));
     }
   </script>
 </body>
