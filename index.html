@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Stealth Game Launcher</title>
+  <title>Drive Mad Launcher</title>
   <style>
     body {
       background-color: #0d0d0d;
@@ -31,16 +31,6 @@
   </style>
 </head>
 <body>
-  <button onclick="launchGame()">Play Game</button>
-
-  <script>
-    function launchGame() {
-      const win = window.open('about:blank', '_blank');
-      fetch('https://ubg98.github.io/drive-mad/')
-        .then(res => res.text())
-        .then(html => win.document.write(html))
-        .catch(err => alert('Game failed to load. Try again later.'));
-    }
-  </script>
+  <button onclick="window.open('https://playdrivemad.com/', '_blank')">Play Drive Mad</button>
 </body>
 </html>
